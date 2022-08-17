@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { gql } from "@apollo/client";
-import client from "../../apollo-client";
+import client from "./../apollo-client";
 
 import {
   EmojiHappyIcon,
@@ -96,4 +96,10 @@ export async function getServerSideProps(context) {
         id: id,
       },
   });
+
+  return {
+    props: {
+      event: data.event,
+    },
+  };
 }
